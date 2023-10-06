@@ -15,8 +15,11 @@ import {
   deliveryModeOptions,
 } from "./Names";
 import CheckList_Structure from "../components/CheckList_Structure";
-
 function Forms_Structure() {
+  function onsubmit(){
+    console.log(formInfo)
+  
+  }
   const [processInfo, setProcessInfo] = React.useState({
     Piling: false,
     China_Clay: false,
@@ -88,9 +91,9 @@ function Forms_Structure() {
     });
   };
 
-  useEffect(() => {
-    console.log("formInfo state:", formInfo);
-  }, [formInfo]);
+  // useEffect(() => {
+  //   console.log("formInfo state:", formInfo);
+  // }, [formInfo]);
 
   return (
     <form>
@@ -391,7 +394,7 @@ function Forms_Structure() {
         </div>
       </div>
 
-      <button className="send-button">Send</button>
+      <button type='button' className="send-button" onClick={onsubmit}>Send</button>
     </form>
   );
 }
